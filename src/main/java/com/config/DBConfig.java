@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.dao.BlogDAO;
 import com.dao.BlogDAOImpl;
+import com.dao.ForumDAO;
+import com.dao.ForumDAOImpl;
 import com.model.Blog;
 
 @SuppressWarnings("deprecation")
@@ -63,10 +65,15 @@ import com.model.Blog;
 			    return new HibernateTransactionManager(sessionFactory);
 	      }
 	 
-	     @Bean
+	     @Bean(name = "blogDAO")
 	     public BlogDAO getBlogDAO(SessionFactory sessionFactory)
 	     {
 	    	 return new BlogDAOImpl(sessionFactory);
+	     }
+	     @Bean(name = "forumDAO")
+	     public ForumDAO getForumDAO(SessionFactory sessionFactory)
+	     {
+	    	 return new ForumDAOImpl(sessionFactory);
 	     }
 	     
 	}
