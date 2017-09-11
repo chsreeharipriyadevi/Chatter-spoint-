@@ -1,7 +1,5 @@
 package com.dao;
 
-
-
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import com.model.Forum;
 
-@Repository("blogDAO")
 public class ForumDAOImpl implements ForumDAO {
 	
 	@Autowired

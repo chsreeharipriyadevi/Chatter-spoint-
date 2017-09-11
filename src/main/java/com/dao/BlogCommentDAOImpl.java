@@ -1,4 +1,5 @@
 package com.dao;
+
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import com.model.BlogComment;
 
-@Repository("blogDAO")
 public class BlogCommentDAOImpl implements BlogCommentDAO {
 	
 	@Autowired
@@ -55,7 +55,6 @@ public class BlogCommentDAOImpl implements BlogCommentDAO {
 	@Transactional
 	public List<BlogComment> getBlogComment() {
 		// TODO Auto-generated method stub
-		@SuppressWarnings("unchecked")
 		List<BlogComment> listBlogcomment = (List<BlogComment>) sessionFactory.getCurrentSession().createQuery("from BlogComment");
 		 return listBlogcomment;
 		
@@ -92,4 +91,6 @@ public class BlogCommentDAOImpl implements BlogCommentDAO {
 			return false;
 		}
 	}
+
+
 }
