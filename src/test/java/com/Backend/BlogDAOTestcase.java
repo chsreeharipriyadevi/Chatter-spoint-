@@ -18,7 +18,7 @@ static BlogDAO blogDAO;
 	public static void initialize()
 	{
 		AnnotationConfigApplicationContext annotationConfigAppContext=new AnnotationConfigApplicationContext();
-		annotationConfigAppContext.scan("com.collaborate");
+		annotationConfigAppContext.scan("com.*");
 		annotationConfigAppContext.refresh();
 		blogDAO=(BlogDAO)annotationConfigAppContext.getBean("blogDAO");
 	

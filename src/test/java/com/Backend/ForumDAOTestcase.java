@@ -19,7 +19,7 @@ static ForumDAO forumDAO;
 	{
 		@SuppressWarnings("resource")
 		AnnotationConfigApplicationContext annotationConfigAppContext=new AnnotationConfigApplicationContext();
-		annotationConfigAppContext.scan("com.collaborate");
+		annotationConfigAppContext.scan("com.*");
 		annotationConfigAppContext.refresh();
 		forumDAO=(ForumDAO)annotationConfigAppContext.getBean("forumDAO");
 	
