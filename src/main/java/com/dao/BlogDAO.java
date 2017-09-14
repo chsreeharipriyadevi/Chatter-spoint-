@@ -7,9 +7,10 @@ import com.model.Blog;
 public interface BlogDAO {
 
 	public boolean createBlog(Blog blog);
-	public Blog getBlogdetails(int blogId);
-	public List<Blog> getBlog();
-	public boolean approveBlog(Blog blog);
-	public boolean editBlog(int blogId);
-	public boolean deleteBlog(int blogId);
+	  public Blog getBlog(int blogId);
+	  public List<Blog> getBlogs();
+	  public boolean approveBlog(Blog blog);
+	  public boolean editBlog(int blogId);
+	  public boolean deleteBlog(int blogId);
+	  
 }

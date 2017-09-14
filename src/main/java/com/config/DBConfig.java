@@ -1,6 +1,5 @@
 package com.config;
 
-
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -20,10 +19,6 @@ import com.dao.ForumDAO;
 import com.dao.ForumDAOImpl;
 import com.model.Blog;
 import com.model.Forum;
-
-
-
-
 
 @Configuration
 @ComponentScan("com.*")
