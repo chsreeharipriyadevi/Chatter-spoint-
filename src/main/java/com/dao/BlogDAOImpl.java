@@ -10,8 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.model.Blog;
 
-
-
 @Repository("blogDAO")
 public class BlogDAOImpl implements BlogDAO {
 
