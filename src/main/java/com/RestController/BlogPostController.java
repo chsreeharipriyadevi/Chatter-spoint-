@@ -1,6 +1,5 @@
 package com.RestController;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -17,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.model.BlogPost;
 import com.model.User;
-import com.collaborate.service.BlogPostService;
-import com.collaborate.service.UserService;
+import com.service.BlogPostService;
+import com.service.UserService;
 
 @Controller
 public class BlogPostController {
