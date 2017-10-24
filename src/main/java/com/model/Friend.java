@@ -1,25 +1,45 @@
 package com.model;
 
-public class Friend {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-	private int UserID,FriendID;
-	private String Status;
-	public int getUserID() {
-		return UserID;
+@Entity
+@Table(name="friend_batch19")
+public class Friend
+{
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+
+	private int id;
+	private String fromId;
+	private String toId;
+	private char status;
+	
+	public int getId() {
+		return id;
 	}
-	public void setUserID(int userID) {
-		UserID = userID;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getFriendID() {
-		return FriendID;
+	public String getFromId() {
+		return fromId;
 	}
-	public void setFriendID(int friendID) {
-		FriendID = friendID;
+	public void setFromId(String fromId) {
+		this.fromId = fromId;
 	}
-	public String getStatus() {
-		return Status;
+	public String getToId() {
+		return toId;
 	}
-	public void setStatus(String status) {
-		Status = status;
+	public void setToId(String toId) {
+		this.toId = toId;
+	}
+	public char getStatus() {
+		return status;
+	}
+	public void setStatus(char status) {
+		this.status = status;
 	}
 }
