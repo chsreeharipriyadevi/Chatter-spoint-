@@ -31,7 +31,7 @@ public class FriendController
 			Error error=new Error(3, "UnAuthoribute user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}
-		List<User> suggestedUsers=friendDao.listOfSuggestedUsers(user.getFirstName());
+		List<User> suggestedUsers=friendDao.listOfSuggestedUsers(user.getUsername());
 		return new ResponseEntity<List<User>>(suggestedUsers,HttpStatus.OK);
 	}
 	
@@ -45,7 +45,7 @@ public class FriendController
 			Error error=new Error(3, "UnAuthorised user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}
-		String fromUsername=user.getFirstName();
+		String fromUsername=user.getUsername();
 		friendDao.friendRequest(fromUsername,toUsername);
 		return new ResponseEntity<Void> (HttpStatus.OK);
 	}	
@@ -60,7 +60,7 @@ public class FriendController
 			Error error=new Error(3, "UnAuthorised user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}
-		List<Friend> pendingRequests=friendDao.listOfPendingRequest(user.getFirstName());
+		List<Friend> pendingRequests=friendDao.listOfPendingRequest(user.getUsername());
 		return new ResponseEntity<List<Friend>>(pendingRequests,HttpStatus.OK);
 	}
 	
@@ -74,7 +74,7 @@ public class FriendController
 			Error error=new Error(3, "UnAuthorised user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}
-			friendDao.updatePendingRequest(fromId, user.getFirstName(),status);
+			friendDao.updatePendingRequest(fromId, user.getUsername(),status);
 			return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
@@ -88,7 +88,7 @@ public class FriendController
 			Error error=new Error(3, "UnAuthorised user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}
-			List<Friend> friends=friendDao.listOfFriends(user.getFirstName());
+			List<Friend> friends=friendDao.listOfFriends(user.getUsername());
 			return new ResponseEntity<List<Friend>>(friends,HttpStatus.OK);
 	}
 

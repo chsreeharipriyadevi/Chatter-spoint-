@@ -30,7 +30,7 @@ public ResponseEntity<?> uploadProfilePicture(@RequestParam CommonsMultipartFile
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 	} 
 	ProfilePicture profilePicture=new ProfilePicture();
-	profilePicture.setUsername(user.getFirstName());
+	profilePicture.setUsername(user.getUsername());
 	profilePicture.setImage(image.getBytes());
 	profilePictureDao.saveProfilePicture(profilePicture);
 	return new ResponseEntity<User>(user,HttpStatus.OK);
